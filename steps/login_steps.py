@@ -61,11 +61,9 @@ def step_impl(context):
 @then(
     'The error message contains "{message}" message')
 def step_impl(context, message):
-    # assert "Această adresă de email nu este asociată unui cont existent." in context.login_page.get_error_message_text()
-    #     context.login_page.get_error_message_text()
     assert message in context.login_page.get_error_message_text()
 
 
-@then('The message "Te-ai autentificat cu succes" is displayed')
-def step_impl(context):
-    context.login_page.is_main_error_message_displayed()
+@then('The "authentication_message" message is displayed')
+def step_impl(context, authentication_message):
+    context.login_page.is_main_error_message_displayed(authentication_message)

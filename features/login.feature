@@ -38,14 +38,14 @@ Feature: Check the functionality of the Login Page
     Then The main error message is displayed
     Then The error message contains "Parola trebuie sa aiba cel putin 6 caractere" message
 
-      # Scenariul 4 : username ok + parola ok
+      # Scenariul 5 : username ok + parola ok
   Scenario: Check "Te-ai autentificat cu succes" message is displayed when I enter an registered e-mail & valid password
     Given I am on the Login Page
     When I insert "radu.constantinescu1987@gmail.com" in the e-mail adress input
     When I insert a correct password
     When I click on the login button
     Then The main error message is displayed
-    Then The message "Te-ai autentificat cu succes" is displayed
+    Then The "Te-ai autentificat cu succes" message is displayed
 
 
   #  Scenariu 7: username None + parola incorecta

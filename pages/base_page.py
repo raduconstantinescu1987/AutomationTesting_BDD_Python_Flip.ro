@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
 
-from driver import Driver
+from driver import Browser
 
 
-class BasePage(Driver):
+class BasePage(Browser):
     def find(self, locator):
         return self.driver.find_element(*locator)
 

@@ -9,8 +9,7 @@ class LoginPage(BasePage):
     LOGIN_PAGE_URL = "https://flip.ro/autentifica-te/"
     EMAIL_INPUT = (By.ID, "login-email")
     PASSWORD_INPUT = (By.ID, "login-password")
-    LOGIN_BUTTON = (By.XPATH,
-                    "/html/body/div[1]/div/section/section/section/section/div/div/div/div/div/div/div[2]/div[1]/form/fieldset[2]/div/button/span")
+    LOGIN_BUTTON = (By.XPATH, "//button[@class='w-100 reactangle large-btn primary']")
     ERROR_LOGIN_MESSAGE = (By.XPATH, "/html/body/div[2]/div")
     ACCEPT_COOKIE = (By.XPATH, "/html/body/div[3]/div[1]/div/div/div/div/button[1]/span")
 
