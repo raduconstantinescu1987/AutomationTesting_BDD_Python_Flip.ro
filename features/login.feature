@@ -30,7 +30,7 @@ Feature: Check the functionality of the Login Page
 
 #   Scenariul 4: username neinregistrat + parola doar 1 caracter
   @t4
-  Scenario: Check "Parola trebuie sa aiba cel putin 6 caractere" message is displayed when I enter an unregistered e-mail adress & short password
+  Scenario: Check "Parola trebuie sa aiba cel putin 6 caractere" message is displayed when I enter an unregistered e-mail adress & short password.
     Given I am on the Login Page
     When I insert "a@gmail.com" in the e-mail adress input
     When I insert "1" in the password adress input
