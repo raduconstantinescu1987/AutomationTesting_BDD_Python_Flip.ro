@@ -29,8 +29,14 @@ class LoginPage(BasePage):
     def click_login_button(self):
         self.click(self.LOGIN_BUTTON)
 
-    def is_main_error_message_displayed(self):
-        return self.is_element_displayed(self.ERROR_LOGIN_MESSAGE)
+    def is_main_error_message_displayed(self, expected_error_message):
+        try:
+           error_message_text = self.driver.find_element(*self.ERROR_LOGIN_MESSAGE).text.replace("ș", "s").replace("ă", "a")
+        except:
+            pass
+        assert self.is_element_displayed(self.ERROR_LOGIN_MESSAGE) == True
+
+        assert expected_error_message == error_message_text, f"expected message {expected_error_message}, actual error message {error_message_text}"
 
     def get_error_message_text(self):
         return self.get_text(self.ERROR_LOGIN_MESSAGE)

@@ -53,17 +53,12 @@ def step_impl(context):
     context.login_page.click_login_button()
 
 
-@then('The main error message is displayed')
-def step_impl(context):
-    context.login_page.is_main_error_message_displayed()
-
-
 @then(
     'The error message contains "{message}" message')
 def step_impl(context, message):
     assert message in context.login_page.get_error_message_text()
 
 
-@then('The "authentication_message" message is displayed')
-def step_impl(context, authentication_message):
-    context.login_page.is_main_error_message_displayed(authentication_message)
+@then('The "{message}" message is displayed')
+def step_impl(context, message):
+    context.login_page.is_main_error_message_displayed(message)
